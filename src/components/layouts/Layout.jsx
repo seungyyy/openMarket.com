@@ -1,12 +1,13 @@
 import React from "react";
 import { Navigation } from "./Navigation";
-import styles from "@emotion/styled";
+import { Footer } from "./Footer";
 
 export const Layout = ({ children }) => {
   return (
     <>
-      <Navigation/>
+      <Navigation />
       { children }
+      <Footer />
     </>
   );
 };

@@ -15,7 +15,7 @@ export const Navigation = () => {
               <Image src={logoImg} alt="logo" className="logo-img" />
             </Alink>
             <div className="li-inp">
-              <label for="search-inp"></label>
+              <label htmlFor="search-inp"></label>
               <input type="text" name="search-inp" placeholder="상품을 검색해보세요!" />
             </div>
           </li>
