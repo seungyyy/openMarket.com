@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { ProdItemCard } from '../components/ProdItemCard';
 import axios from 'axios';
+import styled from '@emotion/styled/';
 
-
-function Item({ image, seller, price }) {
-  return (
-    <div>
-      <img src={image} />
-      <h2>{price}</h2>
-      <p>{seller}</p>
-    </div>
-  );
-}
 
 function Home() {
   const [items, setItems] = useState([])
@@ -24,12 +16,19 @@ function Home() {
   }, [])
   
   return (
-    <>
-    {items.map((item, idx)=><Item {...item} key={idx}/>)}
-    </>
+    <Ul>
+    {items.map((item)=><ProdItemCard {...item} key={item.product_id}/>)}
+    </Ul>
   );
 }
 
+
+const Ul = styled.ul`
+  display: grid;
+  gap: 4.875rem 4.375rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 16.66vw;
+`;
 
 
 export default Home;
