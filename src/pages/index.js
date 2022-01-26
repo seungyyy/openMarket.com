@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ProdItemCard } from '../components/ProdItemCard';
+import { Layout } from '../components/layouts/Layout';
 import axios from 'axios';
 import styled from '@emotion/styled/';
-
+import { ImgCarousel } from '../components/ImgCarousel'
 
 function Home() {
+
   const [items, setItems] = useState([])
   useEffect(() => {
     const setData = async ()=>{
@@ -16,18 +18,24 @@ function Home() {
   }, [])
   
   return (
-    <Ul>
-    {items.map((item)=><ProdItemCard {...item} key={item.product_id}/>)}
-    </Ul>
+    <Layout>
+      <ImgCarousel />
+      <Ul>
+        {items.map((item) => (
+          <ProdItemCard {...item} key={item.product_id} />
+        ))}
+      </Ul>
+    </Layout>
   );
 }
 
 
 const Ul = styled.ul`
+  max-width: 1280px;
   display: grid;
-  gap: 4.875rem 4.375rem;
+  gap: 7.25vh 3.64vw;
   grid-template-columns: repeat(3, 1fr);
-  padding: 0 16.66vw;
+  padding: 5em 16.66vw 11.25em;
 `;
 
 

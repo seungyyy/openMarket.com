@@ -1,4 +1,5 @@
 import styled from '@emotion/styled/';
+import Link from 'next/link';
 
 export const ProdItemCard = ({
   image,
@@ -9,14 +10,18 @@ export const ProdItemCard = ({
 }) => {
 
   return (
-    <Container>
-      <img src={image} alt={product_name + '의 이미지'} className="prod-img" />
-      <span>우당탕탕 라이캣의 실험실</span>
-      <p className="prod-name">{product_name}</p>
-      <p className="price">
-        <strong>{price}</strong>원
-      </p>
-    </Container>
+    <Link
+      href='/products' as={`/product/${product_id}`}
+    >
+      <Container>
+        <img src={image} alt={product_name + '의 이미지'} className="prod-img" />
+        <span>우당탕탕 라이캣의 실험실</span>
+        <p className="prod-name">{product_name}</p>
+        <p className="price">
+          <strong>{price}</strong>원
+        </p>
+      </Container>
+    </Link>
   );
 };
 

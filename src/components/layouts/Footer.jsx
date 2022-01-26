@@ -64,7 +64,6 @@ export const Footer = () => {
 
 const Bottom = styled.footer`
   max-width: 1920px;
-  margin-top: 11.25rem;
   padding: 5.55vh 16.66vw 5.8vh;
   background-color: #f2f2f2;
   font-size: 14px;
